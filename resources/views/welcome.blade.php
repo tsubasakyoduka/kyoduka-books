@@ -1,14 +1,7 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('content')
+    
 
         <!-- Styles -->
         <style>
@@ -60,11 +53,14 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 20px;
+            }
+            
+            .m-a-md {
+                margin-bottom: 20px;
             }
         </style>
-    </head>
-    <body>
+    
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -77,19 +73,26 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            <div class="text-center">
+                <div class="title">
+                    ぼくの本棚
                 </div>
-
+                
+                <div class="m-b-md">
+                    {!! link_to_route('signup.get', 'Sign up now!', [], ['class' => 'btn btn-lg btn-success']) !!}
+                </div>
+                
+                <div class="m-a-md">
+                    欲しいが見つかるネット書店
+                </div>
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://books.rakuten.co.jp">楽天ブックス</a>
+                    <a href="https://www.amazon.co.jp">Amazon</a>
+                    <a href="https://www.mercari.com/jp/">メルカリ</a>
+                    <a href="https://honto.jp/">honto</a>
+                    <a href="https://7net.omni7.jp">セブンネット</a>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+   
+@endsection
