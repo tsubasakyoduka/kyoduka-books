@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -61,21 +62,51 @@
             }
         </style>
     
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+        @if (Auth::check())
+          <div class="row">
+            <aside class="col-sm-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ Auth::user()->name }}</h3>
+                    </div>
+                    <div class="card-body">
+                        <img class="rounded img-fluid" src="{{ Gravatar::src(Auth::user()->email, 500) }}" alt="">
+                    </div>
+                    <div class="card-footer">
+                    <h4 class="card-title">My best of book:<br>【{{ $user->content }}】</h4>
+                    
+                    {!! link_to_route('users.edit', 'Best bookを変更', ['id' => $user->id], ['class' => 'btn btn-success']) !!}
                 </div>
+                </div>
+            </aside>
+            
+            <div class="col-sm-8">
+            <div class="col-sm-4">
+                <h6>本の写真：</h6>
+                <img class="rounded img-fluid" src="{{ Gravatar::src(Auth::user()->email, 500) }}" alt="">
+            </div>
+            <div class="col-sm-12">
+            @if (Auth::id() == $user->id)
+                    {!! Form::open(['route' => 'mybooks.store']) !!}
+                        <div class="form-group">
+                            {!! Form::label('content', '本の名前:') !!}
+                            {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                            {!! Form::label('content', 'この本で得た事:') !!}
+                            {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
+                            {!! Form::submit('本棚に入れる', ['class' => 'btn btn-success btn-block']) !!}
+                        </div>
+                    {!! Form::close() !!}
+                @endif
+            
+            @if (count($mybooks) > 0)
+                @include('mybooks.mybooks', ['mybooks' => $mybooks])
             @endif
+        </div>
+          @else
 
             <div class="text-center">
                 <div class="title">
-                    ぼくの本棚
+                    秘密の本棚
                 </div>
                 
                 <div class="m-b-md">
@@ -94,5 +125,9 @@
                 </div>
             </div>
         </div>
-   
+   @endif
 @endsection
+
+
+
+

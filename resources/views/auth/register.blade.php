@@ -21,7 +21,7 @@
                 
                 <div class="form-group">
                     {!! Form::label('content', '好きな本') !!}
-                    {!! Form::email('content', old('content'), ['class' => 'form-control']) !!}
+                    {!! Form::text('content', old('content'), ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
