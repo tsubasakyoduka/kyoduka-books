@@ -60,6 +60,11 @@
             .m-a-md {
                 margin-bottom: 20px;
             }
+            
+            .m-c-md {
+                margin-top: 80px;
+                
+            }
         </style>
     
         @if (Auth::check())
@@ -114,7 +119,7 @@
                 </div>
                 
                 <div class="m-a-md">
-                    欲しいが見つかるネット書店
+                    おすすめネット書店
                 </div>
                 <div class="links">
                     <a href="https://books.rakuten.co.jp">楽天ブックス</a>
@@ -122,6 +127,13 @@
                     <a href="https://www.mercari.com/jp/">メルカリ</a>
                     <a href="https://honto.jp/">honto</a>
                     <a href="https://7net.omni7.jp">セブンネット</a>
+                </div>
+                
+                <div class="m-c-md">
+                    <p>【当ポートフォリオの機能（PHP/Laravel使用）】<br>
+                       ・ユーザ登録／ログイン認証機能<br>
+                       ・My best of Bookの登録、編集機能<br>・投稿（books）の一覧表示、削除、編集機能<br>・フォロー／フォロワー機能<br>・お気に入り機能</p>
+                    
                 </div>
             </div>
         </div>
