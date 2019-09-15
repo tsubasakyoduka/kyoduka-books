@@ -31,5 +31,12 @@ Route::group(['middleware' => ['auth']], function () {
     });
     
     
+    Route::group(['prefix' => 'mybooks/{id}'], function () {
+        Route::post('favorite', 'FavoritesController@store')->name('favorites.favorite');
+        Route::delete('unfavorite', 'FavoritesController@destroy')->name('favorites.unfavorite');
+        Route::get('favoritings', 'UsersController@favoritings')->name('favorites.favoritings');
+    });
+    
+    
     Route::resource('mybooks', 'MybooksController', ['only' => ['store','edit', 'update', 'destroy']]);
 });

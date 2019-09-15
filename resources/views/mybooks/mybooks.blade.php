@@ -13,6 +13,7 @@
                 <div class="container"> 
                 
                 <div class="row">
+                    　　　<div class="col-3">@include('mybook.mybook_button', ['mybook' => $mybook])</div>
                     @if (Auth::id() == $mybook->user_id)
                     <div class="col-3">{!! link_to_route('mybooks.edit', 'この本を編集', ['id' => $mybook->id], ['class' => 'btn btn-light']) !!}</div>
                         <div class="col-2">{!! Form::open(['route' => ['mybooks.destroy', $mybook->id], 'method' => 'delete']) !!}

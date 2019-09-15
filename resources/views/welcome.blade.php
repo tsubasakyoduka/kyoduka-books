@@ -7,7 +7,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #f1d2ba;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -133,7 +133,6 @@
                     <p>【当ポートフォリオの機能（PHP/Laravel使用）】<br>
                        ・ユーザ登録／ログイン認証機能<br>
                        ・My best of Bookの登録、編集機能<br>・投稿（books）の一覧表示、削除、編集機能<br>・フォロー／フォロワー機能<br>・お気に入り機能</p>
-                    
                 </div>
             </div>
         </div>

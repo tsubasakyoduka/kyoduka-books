@@ -87,4 +87,45 @@ class User extends Authenticatable
         $follow_user_ids[] = $this->id;
         return Mybook::whereIn('user_id', $follow_user_ids);
     }
+    
+    public function favoritings()
+    {
+        return $this->belongsToMany(Mybook::class, 'favorite', 'user_id', 'mybook_id')->withTimestamps();
+    }
+    
+    
+    public function favorite($mybookId)
+    {
+        // 既にフォローしているかの確認
+        $exist = $this->is_favoriting($mybookId);
+    
+        if ($exist) {
+            // 既にフォローしていれば何もしない
+            return false;
+        } else {
+            // 未フォローであればフォローする
+            $this->favoritings()->attach($mybookId);
+            return true;
+        }
+    }
+    
+    public function unfavorite($mybookId)
+    {
+        // 既にフォローしているかの確認
+        $exist = $this->is_favoriting($mybookId);
+    
+        if ($exist) {
+            // 既にフォローしていればフォローを外す
+            $this->favoritings()->detach($mybookId);
+            return true;
+        } else {
+            // 未フォローであれば何もしない
+            return false;
+        }
+    }
+    
+    public function is_favoriting($mybookId)
+    {
+        return $this->favoritings()->where('mybook_id', $mybookId)->exists();
+    }
 }
