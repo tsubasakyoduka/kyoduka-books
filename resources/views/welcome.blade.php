@@ -1,73 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>mybooks</title>
+        
+        <link href="https://fonts.googleapis.com/css?family=Caveat rel="stylesheet">
+        <link href="css/sheet.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/vegas.min.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        
+    </head>
 
-@extends('layouts.app')
+    <body id="vegas">
 
-@section('content')
-    
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #f1d2ba;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 20px;
-            }
+        @include('commons.navbar')
+        
+        <div class="container">
+            @include('commons.error_messages')
             
-            .m-a-md {
-                margin-bottom: 20px;
-            }
-            
-            .m-c-md {
-                margin-top: 80px;
-                
-            }
-        </style>
-    
-        @if (Auth::check())
+            @if (Auth::check())
           <div class="row">
             <aside class="col-sm-4">
                 <div class="card">
@@ -111,7 +63,7 @@
 
             <div class="text-center">
                 <div class="title">
-                    秘密の本棚
+                    Secret bookshelf
                 </div>
                 
                 <div class="m-b-md">
@@ -137,7 +89,21 @@
             </div>
         </div>
    @endif
-@endsection
+        </div>
+        
+        
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        
+        <script script type="text/javascript" src="js/vegas.min.js"></script>
+        <script script type="text/javascript" src="js/function.js"></script> 
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+        
+    </body>
+</html>
 
 
 
