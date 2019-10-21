@@ -21,6 +21,8 @@ Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::group(['middleware' => ['auth']], function () {
+    
+    
     Route::resource('users', 'UsersController', ['only' => ['index', 'show','edit','update']]);
     
     Route::group(['prefix' => 'users/{id}'], function () {
@@ -28,6 +30,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
         Route::get('followings', 'UsersController@followings')->name('users.followings');
         Route::get('followers', 'UsersController@followers')->name('users.followers');
+        
+        
+        
     });
     
     

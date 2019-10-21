@@ -15,10 +15,9 @@
                 <div class="row">
                     　　　<div class="col-3">@include('mybook.mybook_button', ['mybook' => $mybook])</div>
                     @if (Auth::id() == $mybook->user_id)
-                    <div class="col-3">{!! link_to_route('mybooks.edit', 'この本を編集', ['id' => $mybook->id], ['class' => 'btn btn-light']) !!}</div>
+                    <div class="col-3">{!! link_to_route('mybooks.edit', '編集', ['id' => $mybook->id], ['class' => 'btn btn-light']) !!}</div>
                         <div class="col-2">{!! Form::open(['route' => ['mybooks.destroy', $mybook->id], 'method' => 'delete']) !!}
-                        
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
+                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
                         {!! Form::close() !!}</div>
                     @endif
                 </div>
