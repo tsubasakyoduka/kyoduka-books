@@ -39,18 +39,18 @@
             
             <div class="col-sm-8">
             <div class="col-sm-4">
-                <h6>本の写真：</h6>
+                <h6>写真：</h6>
                 <img class="rounded img-fluid" src="{{ Gravatar::src(Auth::user()->email, 500) }}" alt="">
             </div>
             <div class="col-sm-12">
             @if (Auth::id() == $user->id)
                     {!! Form::open(['route' => 'mybooks.store']) !!}
                         <div class="form-group">
-                            {!! Form::label('content', '本の名前:') !!}
+                            {!! Form::label('content', 'Portfolio title:') !!}
                             {!! Form::text('title', null, ['class' => 'form-control']) !!}
-                            {!! Form::label('content', 'この本で得た事:') !!}
+                            {!! Form::label('content', '内容:') !!}
                             {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
-                            {!! Form::submit('本棚に入れる', ['class' => 'btn btn-success btn-block']) !!}
+                            {!! Form::submit('投稿する', ['class' => 'btn btn-success btn-block']) !!}
                         </div>
                     {!! Form::close() !!}
                 @endif
@@ -63,7 +63,7 @@
 
             <div class="text-center">
                 <div class="title">
-                    Secret bookshelf
+                    Secret Portfolio Collection
                 </div>
                 
                 <div class="m-b-md">
@@ -82,12 +82,12 @@
                 </div>
                 
                 <div class="m-c-md">
-                    <p>【当ポートフォリオの機能（PHP/Laravel使用）】<br>
+                    <p>【当ポートフォリオの現機能（PHP/Laravel使用）】<br>
                        ・ユーザ登録／ログイン認証機能<br>
                        ・My best of Bookの登録、編集機能<br>
-                       ・投稿（books）の一覧表示、削除、編集機能<br>
+                       ・投稿の一覧表示、削除、編集機能<br>
                        ・フォロー／フォロワー機能<br>・お気に入り機能<br>
-                       ・レンタルBookstoreの設置</p>
+                       ・レンタルstoreの設置<br>・ログアウト機能</p>
                 </div>
             </div>
         </div>

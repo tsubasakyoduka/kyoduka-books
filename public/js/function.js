@@ -1,8 +1,8 @@
 $(function() {
     $('#vegas').vegas({
         slides: [
-            { src: '../idea.jpg' },
-            { src: '../idea.jpg' },
+            { src: '../baby.jpg' },
+            { src: '../baby.jpg' },
             // { src: './img/image1111.png' },
             // { src: './img/image11.png' }
         ],
@@ -17,8 +17,8 @@ $(function() {
     
     $('#vegass').vegas({
         slides: [
-            { src: '../idea.jpg' },
-            { src: '../idea.jpg' },
+            { src: '../baby.jpg' },
+            { src: '../baby.jpg' },
             // { src: './img/image1111.png' },
             // { src: './img/image11.png' }
         ],
