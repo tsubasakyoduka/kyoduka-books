@@ -46,7 +46,7 @@
             @if (Auth::id() == $user->id)
                     {!! Form::open(['route' => 'mybooks.store']) !!}
                         <div class="form-group">
-                            {!! Form::label('content', 'Portfolio title:') !!}
+                            {!! Form::label('content', 'Portfolio URL:') !!}
                             {!! Form::text('title', null, ['class' => 'form-control']) !!}
                             {!! Form::label('content', '内容:') !!}
                             {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}

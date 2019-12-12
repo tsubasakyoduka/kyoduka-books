@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
         <style>
             body{
-                background-image: url(../idea.jpg);
+                background-image: url(../baby.jpg);
                 background-size: cover;
             }
         </style>
