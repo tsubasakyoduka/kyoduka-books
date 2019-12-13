@@ -12,6 +12,7 @@
         
         <style>
          .font {
+         color: #ffc107;
          font-family: 'Bangers', cursive;
          }
         </style>
@@ -26,7 +27,7 @@
             @include('commons.error_messages')
             
             <div class="text-center">
-        <h1 class="font">Make a bookshelf</h1>
+        <h1 class="font">Member registration</h1>
     </div>
 
     <div class="row">
