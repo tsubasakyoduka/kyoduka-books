@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>mybooks</title>
+        <title>portfolio</title>
         
         <link href="https://fonts.googleapis.com/css?family=Caveat rel="stylesheet">
         <link href="css/sheet.css" rel="stylesheet" type="text/css">
@@ -12,11 +12,13 @@
         
     </head>
 
-    <body id="vegas">
-
-        @include('commons.navbar')
+    <body id="vegas" class="bg_img">
         
-        <div class="container">
+        <div class="z">
+        @include('commons.navbar')
+        </div>
+        
+        <div class="container z">
             @include('commons.error_messages')
             
             @if (Auth::check())
@@ -37,8 +39,8 @@
                 </div>
             </aside>
             
-            <div class="col-sm-8">
-            <div class="col-sm-4">
+            <div class="col-sm-8 z">
+            <div class="col-sm-4 z">
                 <h6>写真：</h6>
                 <img class="rounded img-fluid" src="{{ Gravatar::src(Auth::user()->email, 500) }}" alt="">
             </div>
@@ -62,26 +64,17 @@
           @else
 
             <div class="text-center">
-                <div class="title">
-                    Secret Portfolio Collection
+                <div>
+                    <h1 class="title">Secret Portfolio Collection</h1>
+                    
+                    <p class="subtitle">当サイトは、未経験からエンジニアとして内定を頂いた駆け出しエンジニア達のポートフォリオが集まるサイトです。</p>
                 </div>
                 
-                <div class="m-b-md">
+                <div class="m-b-md z">
                     {!! link_to_route('signup.get', 'Sign up now!', [], ['class' => 'btn btn-lg btn-success']) !!}
                 </div>
                 
-                <div class="m-a-md">
-                    おすすめネット書店
-                </div>
-                <div class="links">
-                    <a href="https://books.rakuten.co.jp">楽天ブックス</a>
-                    <a href="https://www.amazon.co.jp">Amazon</a>
-                    <a href="https://www.mercari.com/jp/">メルカリ</a>
-                    <a href="https://honto.jp/">honto</a>
-                    <a href="https://7net.omni7.jp">セブンネット</a>
-                </div>
-                
-                <div class="m-c-md">
+                <div class="m-c-md z">
                     <p>【当ポートフォリオの現機能（PHP/Laravel使用）】<br>
                        ・ユーザ登録／ログイン認証機能<br>
                        ・My best of Bookの登録、編集機能<br>
